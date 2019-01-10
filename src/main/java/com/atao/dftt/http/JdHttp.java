@@ -38,12 +38,12 @@ public class JdHttp {
 	private static String addressName = "汪涛";
 	private static String addressDetail = "新荷北苑14栋805室";
 	private static String mobile = "17755117870";
-	private static String eid = "UMQLCMWUZUGTSIW7BBWNCURQKXS7O72Y4VFGZV3TSOAD3URNZTKFA6SFW2WIMMFO4JFSYY44YV3HBJBUVCHN63HOYM";
+	private static String eid = "RE26DWMJKPSNQNB4IFENIC7J55MB26PCRHQIFTSSRG2ZAZXFK2RU7ZHIA2AV2W4YRRBYQZ7DS77XI6XQ6T6WWF2CSM";
 	private static String fp = "2a3da9a29810cfa7a157dd5d4318df6b";
 	private static String riskControl;
 	private static String checkcodeTxt;
 	private static String checkCodeRid;
-	private static String trackId = "761eff02d82c234e17bae72974031d37";
+	private static String trackId = "4d87edde1cd696bfc5a0dae075258c08";
 	private static String username = "wangtaowinner";
 
 	public static void main(String[] args) throws URISyntaxException {
@@ -222,7 +222,7 @@ public class JdHttp {
 	public static int submitOrder() {
 		String url = "https://trade.jd.com/shopping/order/submitOrder.action";
 		Map<String, String> heads = new HashMap<String, String>();
-		String postData = "overseaPurchaseCookies=&submitOrderParam.sopNotPutInvoice=true&submitOrderParam.trackID=TestTrackId&submitOrderParam.ignorePriceChange=0&submitOrderParam.btSupport=0&riskControl="
+		String postData = "overseaPurchaseCookies=&submitOrderParam.sopNotPutInvoice=false&submitOrderParam.trackID=TestTrackId&submitOrderParam.ignorePriceChange=0&submitOrderParam.btSupport=0&submitOrderParam.eid="+eid+"&submitOrderParam.fp="+fp+"&riskControl="
 				+ riskControl + "&submitOrderParam.isBestCoupon=1&submitOrderParam.jxj=1&submitOrderParam.trackId="
 				+ trackId;
 		String content = HttpUrlConnectUtils.httpPost(url, postData, heads, null);

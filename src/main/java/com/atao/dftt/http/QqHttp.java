@@ -18,9 +18,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
-import com.alibaba.fastjson.JSONObject;
-import com.atao.dftt.util.ChaoJiYing;
-import com.atao.dftt.util.FileUtils;
 import com.atao.dftt.util.HttpUrlConnectUtils;
 import com.atao.util.StringUtils;
 
@@ -51,18 +48,6 @@ public class QqHttp {
 			return "";
 		}
 		return verifycode;
-	}
-
-	private static String getImageCode(String capCd) {
-		String url = "https://ssl.captcha.qq.com/getimage?aid=716027609&r=0.6472875226754695&uin=" + qq + "&cap_cd="
-				+ capCd;
-		try {
-			byte[] byteArr = FileUtils.getByte(url);
-			return ChaoJiYing.sendPic(byteArr);
-		} catch (Exception e) {
-			logger.info(e.getMessage());
-		}
-		return null;
 	}
 
 	public static String qqLogin() {

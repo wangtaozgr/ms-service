@@ -63,10 +63,10 @@ public class JdOrderTask extends TimerTask {
 				e.printStackTrace();
 			}
 		}
-		boolean start = false;// 是否有库存
+		/*boolean start = false;// 是否有库存
 		while (!start && (endTime-240000L > new Date().getTime())) {
 			start = JdHttp.isStockState(product.getProductId());
-		}
+		}*/
 		
 		boolean success = false;
 		while ((!success) && (endTime > new Date().getTime())) {
